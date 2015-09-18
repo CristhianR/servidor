@@ -1,23 +1,36 @@
 
 package sockets.servidor;
 
+// Se importan los paquetes a utilizar.
 import java.io.BufferedReader;
 import java.io.DataOutputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import sockets.conexion.Conexion;
 
-public class Servidor extends Conexion //Se hereda de conexión para hacer uso de los sockets y demás
+/**
+ * Se Declara la clase Servidor la cual hereda de conexión para hacer uso de los sockets y demás.
+ * @author cristhian
+ * @version 17/09/15
+ */
+public class Servidor extends Conexion 
 {
-    public Servidor() throws IOException{super("servidor");} //Se usa el constructor para servidor de Conexion
-
-    public void startServer()//Método para iniciar el servidor
+    /**
+     * Se usa el constructor para servidor de Conexion
+     * @throws IOException 
+     */
+    public Servidor() throws IOException{super("servidor");} 
+    
+    //Método para iniciar el servidor
+    public void startServer()
     {
         try
         {
-            System.out.println("Esperando..."); //Esperando conexión
-
-            cs = ss.accept(); //Accept comienza el socket y espera una conexión desde un cliente
+            //Esperando conexión
+            System.out.println("Esperando..."); 
+            
+            //Accept comienza el socket y espera una conexión desde un cliente
+            cs = ss.accept(); 
 
             System.out.println("Cliente en línea");
 
@@ -30,7 +43,8 @@ public class Servidor extends Conexion //Se hereda de conexión para hacer uso d
             //Se obtiene el flujo entrante desde el cliente
             BufferedReader entrada = new BufferedReader(new InputStreamReader(cs.getInputStream()));
             
-            while((mensajeServidor = entrada.readLine()) != null) //Mientras haya mensajes desde el cliente
+            //Mientras haya mensajes desde el cliente
+            while((mensajeServidor = entrada.readLine()) != null) 
             {
                 //Se muestra por pantalla el mensaje recibido
                 System.out.println(mensajeServidor);

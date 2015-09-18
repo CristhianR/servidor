@@ -1,19 +1,25 @@
 
 package sockets.main;
 
-
+// Se importan los paquetes a utilizar.
 import java.io.IOException;
 import sockets.cliente.Cliente;
 
 
-//Clase principal que hará uso del cliente
+/**
+ * Se declara la Clase principal que hará uso del cliente.
+ * @author cristhian
+ * @version 17/09/15
+ */
 public class MainCliente
 {
     public static void main(String[] args) throws IOException
     {  
-        Cliente cli = new Cliente(); //Se crea el cliente
+        //Se crea el cliente
+        Cliente cli = new Cliente(); 
         
         System.out.println("Iniciando cliente\n");
-        cli.startClient(); //Se inicia el cliente
+        //Se inicia el cliente
+        cli.startClient(); 
     }
 }

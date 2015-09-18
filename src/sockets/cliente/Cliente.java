@@ -1,16 +1,26 @@
 
 package sockets.cliente;
 
-
+// Se importan los paquetes a utilizar
 import java.io.DataOutputStream;
 import java.io.IOException;
 import sockets.conexion.Conexion;
 
+/**
+ * Se declara la clase Cliente.
+ * @author cristhian
+ * @version 17/09/15
+ */
 public class Cliente extends Conexion
 {
-    public Cliente() throws IOException{super("cliente");} //Se usa el constructor para cliente de Conexion
-
-    public void startClient() //Método para iniciar el cliente
+    /**
+     * Se usa el constructor para cliente de Conexion
+     * @throws IOException 
+     */
+    public Cliente() throws IOException{super("cliente");} 
+    
+     //Método para iniciar el cliente
+    public void startClient()
     {
         try
         {            
